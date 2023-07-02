@@ -2,7 +2,7 @@ require('dotenv').config();
 const knex = require('knex');
 
 const connection = knex({
-  client: 'mysql2',
+  client: 'pg',
   connection: {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -23,8 +23,11 @@ connection.raw('SELECT 1')
 
 
   
-const query = await connection.select('*').from('pessoas').debug()
+// const selectPessoas = async () => {
+//   const response = await connection.select('*').from('pessoas');
+//   console.log(response);
+// };
 
-console.log(query)
+// selectPessoas()
 
 module.exports = connection;

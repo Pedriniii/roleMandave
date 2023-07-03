@@ -9,8 +9,5 @@
 - `Funcionalidade 1`: Planejar passeios
 - `Funcionalidade 2`: Organizar quantidade de pessoas
 - `Funcionalidade 3`: Controlar orçamento do passeio
-<<<<<<< HEAD
 - `Funcionalidade 4`: Controlar os pagamentos dos amiguinhos
-=======
-- `Funcionalidade 4`: Controlar os pagamentos dos amiguinhos
->>>>>>> b41780c4a233aaacd49d4979cbdaf8e70fb652ab
+

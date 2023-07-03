@@ -6,4 +6,5 @@ const rotasLogin = express();
 rotasLogin.post('/loginAuth', login);
 
 
+
 module.exports = rotasLogin

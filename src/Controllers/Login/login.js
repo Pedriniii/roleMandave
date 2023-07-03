@@ -1,25 +1,33 @@
-const jwt = require('jsonwebtoken');
-const conn = require('../../Connections/db.js');
+const jwt = require("jsonwebtoken");
+const conn = require("../../Connections/db.js");
 
-const login = async (req, res) => {
-    const { usuario, senha } = req.body;    
+function gerarToken(usuarioId) {
+  const chaveSecreta = process.env.JWT_PASSWORD;
 
-    try {
-        const user = await conn('pessoas').where({ usuario }).first();
-
-        if (!user) return res.json({"error":'usuario errado'})
-
-        console.log(user)
-
-        if(user.senha != senha) return res.json({"error":'senha errada'})
-
-        return res.json({
-            "name": user.nome,
-            "token": "comi o cu de quem ta lendo" 
-        })
-    } catch (error) {
-        return res.status(500).json({ mensagem: error.message });
-    }
+  return jwt.sign(usuarioId, chaveSecreta);
 }
 
-module.exports = { login } 
+const login = async (req, res) => {
+  const { usuario, senha } = req.body;
+
+  try {
+    const user = await conn("pessoas").where({ usuario }).first();
+
+    if (!user) return res.json({ error: "Usuario ou senha incorreto!" });
+
+    console.log(user);
+
+    if (user.senha != senha) return res.json({ error: "Usuario ou senha incorreto!" });
+
+    const tokenId = gerarToken(user.id);
+
+    return res.json({
+      name: user.nome,
+      token: tokenId,
+    });
+  } catch (error) {
+    return res.status(500).json({ mensagem: error.message });
+  }
+};
+
+module.exports = { login };

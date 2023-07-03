@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express')
 const rotasPessoas = require('./Routers/pessoas.js')
 const rotasPasseios = require('./Routers/passeios.js')

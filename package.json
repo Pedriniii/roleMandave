@@ -1,7 +1,7 @@
 {
   "name": "passeio",
   "version": "1.0.0",
-  "description": "",
+  "description": "<h1 align=\"center\"> Passeios Mandave </h1>",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

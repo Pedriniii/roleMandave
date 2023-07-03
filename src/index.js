@@ -1,12 +1,18 @@
 const express = require('express')
-const rotas = require('./Routers/pessoas.js')
+const rotasPessoas = require('./Routers/pessoas.js')
+const rotasPasseios = require('./Routers/passeios.js')
 
 
 const app = express()
 
 app.use(express.json())
-app.use(rotas)
 
-app.listen('3000', () => {
-    console.log('Servidor rodando na porta 3000');
+//Rotas
+app.use(rotasPessoas)
+app.use(rotasPasseios)
+
+const portaAPI = '8080'
+
+app.listen(portaAPI , () => {
+    console.log('Servidor rodando na porta: ' + portaAPI);
 })

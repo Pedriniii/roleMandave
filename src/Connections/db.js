@@ -21,13 +21,4 @@ connection.raw('SELECT 1')
     console.error('Erro ao conectar ao banco de dados:', error);
   });  
 
-
-  
-// const selectPessoas = async () => {
-//   const response = await connection.select('*').from('pessoas');
-//   console.log(response);
-// };
-
-// selectPessoas()
-
 module.exports = connection;

@@ -24,7 +24,7 @@ const atualizarPessoa = async (req, res) => {
      return res.status(200).json({ mensagem: 'Pessoa atualizada com sucesso' });
     }catch(error){
       console.error(error);
-      res.status(500).json({ error: 'Ocorreu um erro ao atualizar o registro.' });
+      res.status(500).json({ error: error.detail });
     }
 
 }

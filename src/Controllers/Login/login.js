@@ -8,10 +8,10 @@ function gerarToken(usuarioId) {
 }
 
 const login = async (req, res) => {
-  const { usuario, senha } = req.body;
+  const { apelido, senha } = req.body;
 
   try {
-    const user = await conn("pessoas").where({ usuario }).first();
+    const user = await conn("pessoas").where({ apelido }).first();
 
     if (!user) return res.json({ error: "Usuario ou senha incorreto!" });
 

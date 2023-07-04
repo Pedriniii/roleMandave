@@ -1,7 +1,7 @@
 const conn = require ('../../Connections/db.js')
 
 const atualizarPessoa = async (req, res) => {
-    const { id, nome, apelido, senha } = req.body;
+    const { id, nome, senha } = req.body;
 
    conn('pessoas')
   .where({id})

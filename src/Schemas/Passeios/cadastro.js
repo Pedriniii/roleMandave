@@ -14,10 +14,6 @@ const cadastrarPasseios = joi.object({
         'any.required': 'O campo apelido é obrigatório',
         'string.empty': 'O campo apelido é obrigatório',
     }),
-    usuario: joi.string().required().messages({
-        'any.required': 'O campo usuario é obrigatório',
-        'string.empty': 'O campo usuario é obrigatório',
-    }),
     senha: joi.string().required().messages({
         'any.required': 'O campo senha é obrigatório',
         'string.empty': 'O campo senha é obrigatório',

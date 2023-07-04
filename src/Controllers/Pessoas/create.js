@@ -1,7 +1,7 @@
 const conn = require ('../../Connections/db.js');
 
 const cadastrarPessoas = async (req, res) => {
- const { nome, apelido, usuario, senha } = req.body;
+ const { nome, email ,apelido, senha } = req.body;
  
   // if (!NOME || !APELIDO || !USUARIO || !SENHA) {
   //   return res.status(400).json({ error: 'Todos os campos são obrigatórios' });
@@ -12,8 +12,8 @@ const cadastrarPessoas = async (req, res) => {
   try {
     const novoRegistro = await conn('pessoas').insert({
       nome,
+      email,
       apelido,
-      usuario,
       senha
     })
 

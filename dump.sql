@@ -39,6 +39,6 @@ CREATE TABLE  Recebimentos (
 );
 
 -- Tabela de Imagens
-CREATE TABLE  Orcamento (
-    ID SERIAL PRIMARY KEY
-);
+-- CREATE TABLE  Orcamento (
+--     ID SERIAL PRIMARY KEY
+-- );

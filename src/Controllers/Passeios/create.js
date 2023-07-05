@@ -2,7 +2,7 @@ const conn = require("../../Connections/db.js");
 const jwt = require('jsonwebtoken');
 
 const cadastrarPasseio = async (req, res) => {
-  const { descricao, valor_recebido, qtd_max_pessoas, qtd_atual_pessoas } =
+  const { descricao, valor_recebido, qtd_max_pessoas, qtd_atual_pessoas, data_inicio, data_fim } =
     req.body;
   const { authorization } = req.headers;
 
@@ -20,6 +20,8 @@ const cadastrarPasseio = async (req, res) => {
         valor_recebido,
         qtd_max_pessoas,
         qtd_atual_pessoas,
+        data_inicio,
+        data_fim 
       })
       .returning("id");
 

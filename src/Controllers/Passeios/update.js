@@ -1,13 +1,15 @@
 const conn = require("../../Connections/db");
 
 const atualizarPasseio = async (req, res) => {
-    const {id, descricao, qtd_max_pessoas } = req.body;
+    const {id, descricao, qtd_max_pessoas, data_inicio, data_fim } = req.body;
 
     try{
     await conn('passeios')
      .update({
        descricao: descricao,
        qtd_max_pessoas: qtd_max_pessoas,
+       data_inicio: data_inicio,
+       data_fim: data_fim
      })
      .where({id})
 

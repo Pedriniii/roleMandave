@@ -7,7 +7,7 @@ const verificarLogin = require('../Middlewares/authLogin');
 const rotasPasseios = express();
 
 // rotas.post('/cadastrarPasseios', cadastrarPasseios);
-rotasPasseios.get('/listarPasseios',verificarLogin , listarPasseios);
+rotasPasseios.get('/listarPasseios' ,verificarLogin , listarPasseios);
 rotasPasseios.get('/detalharPasseio',verificarLogin , detalharPasseio);
 rotasPasseios.post('/cadastrarPasseio',verificarLogin , cadastrarPasseio);
 rotasPasseios.put('/atualizarPasseio',verificarLogin , atualizarPasseio);

@@ -7,7 +7,7 @@ const cadastrarPessoas = async (req, res) => {
   //   return res.status(400).json({ error: 'Todos os campos são obrigatórios' });
   // }
 
-  console.log('o nome que eu queria por nessa porra é: ' + nome)
+  // console.log('o nome que eu queria por nessa porra é: ' + nome)
 
   try {
     const novoRegistro = await conn('pessoas').insert({

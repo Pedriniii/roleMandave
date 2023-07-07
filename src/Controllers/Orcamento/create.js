@@ -2,23 +2,23 @@ const conn = require("../../Connections/db");
 const jwt = require("jsonwebtoken");
 
 
-const cadastrarRecebimento = async (req, res) => {
-    const { id_passeio, id_pessoa, valor_pago, data_recebimento } = req.body;
+const cadastrarOrcamento = async (req, res) => {
+    const { id_passeio, descricao, unidade_de_medida, qtd, valor, total } = req.body;
     const { authorization } = req.headers;
-    const timestampValue = new Date(); 
 
     if (!authorization) {
       return res.status(401).json({ mensagem: "Não autorizado" });
     }
   
     try {
-      const novoRegistro = await conn("recebimentos")
+      const novoRegistro = await conn("orcamentos")
         .insert({
           id_passeio,
-          id_pessoa,
-          valor_pago,
-          data_recebimento,
-          time_stamp: timestampValue
+          descricao,
+          unidade_de_medida,
+          qtd,
+          valor,
+          total: qtd * valor
         }) 
       res.json({ message: "Registro inserido com sucesso!" });
     } catch (error) {
@@ -27,5 +27,5 @@ const cadastrarRecebimento = async (req, res) => {
     }
   };
   
-  module.exports = cadastrarRecebimento;
+  module.exports = cadastrarOrcamento;
   

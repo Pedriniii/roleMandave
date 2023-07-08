@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 
 
 const cadastrarRecebimento = async (req, res) => {
-    const { id_passeio, id_pessoa, valor_pago } = req.body;
+    const { id_passeio, id_pessoa, valor_pago, data_recebimento } = req.body;
     const { authorization } = req.headers;
     const timestampValue = new Date(); 
 
@@ -17,7 +17,8 @@ const cadastrarRecebimento = async (req, res) => {
           id_passeio,
           id_pessoa,
           valor_pago,
-          data_recebimento: timestampValue
+          data_recebimento,
+          time_stamp: timestampValue
         }) 
       res.json({ message: "Registro inserido com sucesso!" });
     } catch (error) {

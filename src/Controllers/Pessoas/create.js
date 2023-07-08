@@ -2,10 +2,6 @@ const conn = require ('../../Connections/db.js');
 
 const cadastrarPessoas = async (req, res) => {
  const { nome, email ,apelido, senha } = req.body;
- 
-  // if (!NOME || !APELIDO || !USUARIO || !SENHA) {
-  //   return res.status(400).json({ error: 'Todos os campos são obrigatórios' });
-  // }
 
   console.log('o nome que eu queria por nessa porra é: ' + nome)
 

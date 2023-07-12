@@ -7,7 +7,15 @@ const rotasRecebimentos = require('./Routers/recebimentos.js');
 const rotasPessoasPasseios = require('./Routers/pessoas_passeios.js');
 const rotasOrcamentos = require('./Routers/orcamentos.js')
 
+const cors = require('cors')
 const app = express();
+
+app.use(
+    cors({
+        origin:"http://localhost:3000"
+    })
+    )
+
 
 app.use(express.json());
 

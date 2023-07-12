@@ -5,7 +5,7 @@ const addNewPessoa = require('../Controllers/PessoasPasseios/addNewPessoa');
 const rotasPasseios = express();
 
 
-rotasPasseios.post('/addNewPessoa' ,verificarLogin , addNewPessoa);
+rotasPasseios.post('/addNewPessoa' , addNewPessoa);
 
 
 

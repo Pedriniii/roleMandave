@@ -9,7 +9,7 @@ const { SchemaCadastrarPessoas } = require('../Schemas/Pessoas/cadastro.js');
 const rotasPessoas = express();
 
 rotasPessoas.post('/cadastrarPessoas',verificarRequisicao(SchemaCadastrarPessoas), cadastrarPessoas);
-rotasPessoas.get('/listarPessoas', verificarLogin, listarPessoas);
-rotasPessoas.put('/atualizarPessoa', verificarLogin, atualizarPessoa)
+rotasPessoas.get('/listarPessoas', listarPessoas);
+rotasPessoas.put('/atualizarPessoa', atualizarPessoa)
 
 module.exports = rotasPessoas

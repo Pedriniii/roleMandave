@@ -8,9 +8,9 @@ const rotasPasseios = express();
 
 // rotas.post('/cadastrarPasseios', cadastrarPasseios);
 rotasPasseios.get('/listarPasseios', listarPasseios);
-rotasPasseios.get('/detalharPasseio',verificarLogin , detalharPasseio);
-rotasPasseios.post('/cadastrarPasseio',verificarLogin , cadastrarPasseio);
-rotasPasseios.put('/atualizarPasseio',verificarLogin , atualizarPasseio);
+rotasPasseios.get('/detalharPasseio', detalharPasseio);
+rotasPasseios.post('/cadastrarPasseio', cadastrarPasseio);
+rotasPasseios.put('/atualizarPasseio', atualizarPasseio);
 
 
 module.exports = rotasPasseios

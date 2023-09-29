@@ -27,8 +27,8 @@ app.use(rotasRecebimentos);
 app.use(rotasPessoasPasseios);
 app.use(rotasOrcamentos);
 
-const portaAPI = '8080';
+// const portaAPI = '8080';
 
-app.listen(portaAPI , () => {
-    console.log('Servidor rodando na porta: ' + portaAPI);
-});
+// app.listen(portaAPI , () => {
+//     console.log('Servidor rodando na porta: ' + portaAPI);
+// });

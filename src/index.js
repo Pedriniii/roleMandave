@@ -12,7 +12,7 @@ const app = express();
 
 app.use(
     cors({
-        origin:"https://rolemandave-frontend.netlify.app"
+        origin:"https://rolemandave-frontend.netlify.apppostgres://Pedriniii:TcACoZ2DLj4a@ep-tight-shape-48004810.us-east-2.aws.neon.tech/neondb"
     })
     )
 
@@ -27,8 +27,8 @@ app.use(rotasRecebimentos);
 app.use(rotasPessoasPasseios);
 app.use(rotasOrcamentos);
 
-// const portaAPI = '8080';
+const portaAPI = '8080';
 
-// app.listen(portaAPI , () => {
-//     console.log('Servidor rodando na porta: ' + portaAPI);
-// });
+app.listen(portaAPI , () => {
+    console.log('Servidor rodando na porta: ' + portaAPI);
+});

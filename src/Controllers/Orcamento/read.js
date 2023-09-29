@@ -13,4 +13,16 @@ const listarOrcamentos = async (req, res) => {
     
 };
 
-module.exports = listarOrcamentos
+const orcamentoTotal = async(req, res)  => {
+    try{
+        const orcamentoTotal  = await conn('orcamentos')
+            .sum("valor")
+        return res.json({orcamentoTotal})
+    }catch(error) {
+     console.log(error)
+     res.status(500).json({error: 'Deu erro, porra'})   
+    }
+}
+
+
+module.exports = {listarOrcamentos,orcamentoTotal }

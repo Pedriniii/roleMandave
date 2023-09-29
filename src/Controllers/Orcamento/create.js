@@ -4,16 +4,16 @@ const jwt = require("jsonwebtoken");
 
 const cadastrarOrcamento = async (req, res) => {
     const { id_passeio, descricao, unidade_de_medida, qtd, valor, total } = req.body;
-    const { authorization } = req.headers;
+    // const { authorization } = req.headers;
 
-    if (!authorization) {
-      return res.status(401).json({ mensagem: "Não autorizado" });
-    }
+    // if (!authorization) {
+    //   return res.status(401).json({ mensagem: "Não autorizado" });
+    // }
   
     try {
       const novoRegistro = await conn("orcamentos")
         .insert({
-          id_passeio,
+          id_passeio: '1',
           descricao,
           unidade_de_medida,
           qtd,

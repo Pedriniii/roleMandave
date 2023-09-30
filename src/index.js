@@ -11,9 +11,15 @@ const cors = require('cors')
 const app = express();
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://rolemandave-frontend.netlify.app');
+    res.setHeader('Access-Control-Allow-Origin', 'https://rolemandave-frontend.netlify.app/');
     next();
   });
+
+  app.use(cors({
+    origin: 'https://rolemandave-frontend.netlify.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  }));
+
 
 
 app.use(express.json());

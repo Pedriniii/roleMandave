@@ -10,11 +10,10 @@ const rotasOrcamentos = require('./Routers/orcamentos.js')
 const cors = require('cors')
 const app = express();
 
-app.use(
-    cors({
-        origin:"https://rolemandave-frontend.netlify.apppostgres://Pedriniii:TcACoZ2DLj4a@ep-tight-shape-48004810.us-east-2.aws.neon.tech/neondb"
-    })
-    )
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://rolemandave-frontend.netlify.app');
+    next();
+  });
 
 
 app.use(express.json());
